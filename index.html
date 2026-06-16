@@ -26,7 +26,7 @@
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  html { scroll-behavior: smooth; overflow-x: hidden; }
+  html { scroll-behavior: smooth; }
 
   body {
     font-family: 'DM Sans', sans-serif;
@@ -34,7 +34,6 @@
     color: var(--text);
     line-height: 1.6;
     overflow-x: hidden;
-    width: 100%;
   }
 
   /* NAV */
@@ -74,8 +73,7 @@
     min-height: 100vh;
     display: flex; align-items: center;
     padding: 120px 5% 80px;
-    position: relative;
-    overflow-x: hidden;
+    position: relative; overflow: hidden;
   }
   .hero-bg {
     position: absolute; inset: 0;
@@ -88,7 +86,7 @@
                       linear-gradient(90deg, var(--border) 1px, transparent 1px);
     background-size: 60px 60px;
   }
-  .hero-content { position: relative; width: 100%; max-width: 800px; }
+  .hero-content { position: relative; max-width: 760px; }
   .hero-eyebrow {
     display: inline-flex; align-items: center; gap: 10px;
     background: rgba(255,92,40,0.1); border: 1px solid rgba(255,92,40,0.25);
@@ -107,19 +105,16 @@
   }
   .hero h1 {
     font-family: 'Syne', sans-serif;
-    font-size: clamp(2rem, 5vw, 3.6rem);
-    font-weight: 800; line-height: 1.2;
-    letter-spacing: 0;
+    font-size: clamp(2.4rem, 5.5vw, 4rem);
+    font-weight: 800; line-height: 1.1;
+    letter-spacing: -0.03em;
     margin-bottom: 20px;
-    word-break: normal;
-    overflow-wrap: anywhere;
-    padding-right: 4%;
   }
   .hero h1 .accent { color: var(--accent); }
   .hero-sub {
-    font-size: clamp(0.95rem, 2vw, 1.1rem);
+    font-size: clamp(1rem, 2vw, 1.15rem);
     color: var(--muted); font-weight: 300;
-    max-width: 580px; margin-bottom: 40px; line-height: 1.7;
+    max-width: 600px; margin-bottom: 40px; line-height: 1.7;
   }
   .hero-sub strong { color: var(--text); font-weight: 500; }
   .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 64px; }
@@ -217,71 +212,6 @@
   .mini-stat-val {
     font-family: 'Syne', sans-serif;
     font-weight: 700; color: var(--accent);
-  }
-
-  /* PERFORMANCE SNAPSHOT TABLE */
-  .snap-table {
-    border: 1px solid var(--border); border-radius: 16px; overflow: hidden;
-    max-width: 560px;
-  }
-  .snap-row {
-    display: grid; grid-template-columns: 1fr 1fr;
-    padding: 13px 24px; border-bottom: 1px solid var(--border);
-    font-size: 0.9rem;
-  }
-  .snap-row:last-child { border-bottom: none; }
-  .snap-header {
-    background: rgba(255,92,40,0.07);
-    font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em;
-    color: var(--dim); font-weight: 600;
-  }
-  .snap-row:not(.snap-header) div:first-child { color: var(--muted); }
-  .snap-val {
-    font-family: 'Syne', sans-serif; font-weight: 700;
-    color: var(--accent);
-  }
-
-  /* NEW SKILLS — expertise tags */
-  .expertise-grid {
-    display: flex; flex-wrap: wrap; gap: 12px; margin-top: 48px;
-  }
-  .expertise-tag {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: 12px; padding: 14px 20px;
-    font-size: 0.88rem; color: var(--text); font-weight: 500;
-    transition: all 0.25s; display: flex; align-items: center; gap: 8px;
-  }
-  .expertise-tag:hover {
-    border-color: rgba(255,92,40,0.4); color: var(--accent);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-  }
-  .expertise-tag .tag-dot {
-    width: 7px; height: 7px; border-radius: 50%; background: var(--accent);
-  }
-
-  /* CERTIFICATIONS */
-  .cert-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 16px; margin-top: 48px;
-  }
-  .cert-card {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: 16px; padding: 24px;
-    display: flex; align-items: flex-start; gap: 14px;
-    transition: all 0.3s;
-  }
-  .cert-card:hover { border-color: rgba(255,92,40,0.3); transform: translateY(-3px); }
-  .cert-icon {
-    width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0;
-    background: rgba(255,92,40,0.12);
-    display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
-  }
-  .cert-name { font-weight: 600; font-size: 0.88rem; margin-bottom: 3px; }
-  .cert-issuer { font-size: 0.78rem; color: var(--dim); }
-  .cert-status {
-    margin-top: 6px; font-size: 0.72rem; font-family: 'JetBrains Mono', monospace;
-    color: var(--green);
   }
 
   /* SKILLS */
@@ -524,7 +454,7 @@
     nav { padding: 14px 4%; }
     .nav-links { display: none; }
     .hero { padding: 100px 4% 60px; }
-    .hero h1 { font-size: clamp(1.7rem, 8vw, 2.4rem); letter-spacing: -0.01em; }
+    .hero h1 { font-size: 2.2rem; }
     .hero-stats { flex-direction: column; }
     .stat-item { border-right: none; border-bottom: 1px solid var(--border); }
     .stat-item:last-child { border-bottom: none; }
@@ -561,35 +491,32 @@
   <div class="hero-content">
     <div class="hero-eyebrow">Available for New Opportunities</div>
     <h1>
-      Generating High-Intent Real Estate Leads Through <span class="accent">AI-Powered Marketing</span>
+      Generating High-Intent<br>
+      Real Estate Leads Through<br>
+      <span class="accent">AI-Powered Marketing</span>
     </h1>
     <p class="hero-sub">
       <strong>Performance Marketing Specialist</strong> with proven results across 20+ real estate campaigns — reducing CPL through creative testing, FOMO psychology, and AI-driven optimization. Not theory. Real numbers.
     </p>
-    <div style="display:inline-flex;flex-wrap:wrap;gap:10px;margin-bottom:32px;margin-top:-12px;">
-      <span style="background:rgba(255,92,40,0.1);border:1px solid rgba(255,92,40,0.25);color:var(--accent);padding:6px 14px;border-radius:100px;font-size:0.8rem;font-weight:600;">20+ Campaigns Managed</span>
-      <span style="background:rgba(255,92,40,0.1);border:1px solid rgba(255,92,40,0.25);color:var(--accent);padding:6px 14px;border-radius:100px;font-size:0.8rem;font-weight:600;">Best CPL ₹80</span>
-      <span style="background:rgba(255,92,40,0.1);border:1px solid rgba(255,92,40,0.25);color:var(--accent);padding:6px 14px;border-radius:100px;font-size:0.8rem;font-weight:600;">40+ Site Visits Generated</span>
-    </div>
     <div class="hero-btns">
       <a href="#cases" class="btn-primary">View Case Studies →</a>
       <a href="#contact" class="btn-secondary">Contact Me</a>
     </div>
     <div class="hero-stats">
       <div class="stat-item">
-        <div class="stat-num" data-target="20" data-suffix="+">20+</div>
+        <div class="stat-num" data-target="20" data-suffix="+">0</div>
         <div class="stat-label">Real Estate Campaigns Managed</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num" data-target="500" data-suffix="+">500+</div>
+        <div class="stat-num" data-target="500" data-suffix="+">0</div>
         <div class="stat-label">Leads Generated Monthly</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num" data-target="800" data-suffix="K+">800K+</div>
+        <div class="stat-num" data-target="800" data-suffix="K+">0</div>
         <div class="stat-label">Organic Reach Achieved</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num" data-target="20" data-suffix="% ↓">20% ↓</div>
+        <div class="stat-num" data-target="20" data-suffix="% ↓">0</div>
         <div class="stat-label">CPL Reduction Avg.</div>
       </div>
     </div>
@@ -600,34 +527,6 @@
 <section id="about">
   <div class="section-tag">// Who I Am</div>
   <div class="section-title">Not a Typical Fresher.<br>A Results-Driven Marketer.</div>
-
-  <!-- PERFORMANCE SNAPSHOT TABLE -->
-  <div class="perf-snapshot reveal" style="margin-top:48px;">
-    <div class="section-tag" style="margin-bottom:12px;">// Performance Snapshot</div>
-    <div class="snap-table">
-      <div class="snap-row snap-header">
-        <div>Metric</div><div>Result</div>
-      </div>
-      <div class="snap-row">
-        <div>Campaigns Managed</div><div class="snap-val">20+</div>
-      </div>
-      <div class="snap-row">
-        <div>Ad Spend Managed</div><div class="snap-val">₹2L+</div>
-      </div>
-      <div class="snap-row">
-        <div>Leads Generated</div><div class="snap-val">500+</div>
-      </div>
-      <div class="snap-row">
-        <div>Best CPL Achieved</div><div class="snap-val">₹80</div>
-      </div>
-      <div class="snap-row">
-        <div>Site Visits Driven</div><div class="snap-val">40+</div>
-      </div>
-      <div class="snap-row">
-        <div>Primary Niche</div><div class="snap-val">Real Estate</div>
-      </div>
-    </div>
-  </div>
   <div class="about-grid">
     <div class="about-text reveal">
       <p>I'm a <strong>performance-driven marketer</strong> who spent the last year managing real estate ad campaigns end-to-end — from creative strategy and audience segmentation to budget allocation, lead qualification, and client reporting.</p>
@@ -677,22 +576,38 @@
   <div class="section-tag">// Capabilities</div>
   <div class="section-title">Skills & Expertise</div>
   <p class="section-desc">Built through real campaigns, not coursework. Every skill below maps directly to results delivered for real estate clients.</p>
-
-  <div class="expertise-grid">
-    <div class="expertise-tag reveal"><span class="tag-dot"></span> Meta Ads</div>
-    <div class="expertise-tag reveal reveal-delay-1"><span class="tag-dot"></span> Lead Generation</div>
-    <div class="expertise-tag reveal reveal-delay-2"><span class="tag-dot"></span> Creative Testing</div>
-    <div class="expertise-tag reveal reveal-delay-3"><span class="tag-dot"></span> Retargeting</div>
-    <div class="expertise-tag reveal"><span class="tag-dot"></span> Conversion Tracking</div>
-    <div class="expertise-tag reveal reveal-delay-1"><span class="tag-dot"></span> AI Marketing</div>
-    <div class="expertise-tag reveal reveal-delay-2"><span class="tag-dot"></span> Campaign Analysis</div>
-    <div class="expertise-tag reveal reveal-delay-3"><span class="tag-dot"></span> FOMO Psychology</div>
-    <div class="expertise-tag reveal"><span class="tag-dot"></span> Audience Segmentation</div>
-    <div class="expertise-tag reveal reveal-delay-1"><span class="tag-dot"></span> Facebook Pixel</div>
-    <div class="expertise-tag reveal reveal-delay-2"><span class="tag-dot"></span> Landing Page Optimisation</div>
-    <div class="expertise-tag reveal reveal-delay-3"><span class="tag-dot"></span> Performance Reporting</div>
+  <div class="skills-grid">
+    <div class="skill-card reveal">
+      <div class="skill-name">Performance Marketing</div>
+      <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="92"></div></div>
+      <div class="skill-pct">92%</div>
+    </div>
+    <div class="skill-card reveal reveal-delay-1">
+      <div class="skill-name">Meta Ads Manager</div>
+      <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="90"></div></div>
+      <div class="skill-pct">90%</div>
+    </div>
+    <div class="skill-card reveal reveal-delay-2">
+      <div class="skill-name">Lead Generation Strategy</div>
+      <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="88"></div></div>
+      <div class="skill-pct">88%</div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-name">Creative Strategy & Testing</div>
+      <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="85"></div></div>
+      <div class="skill-pct">85%</div>
+    </div>
+    <div class="skill-card reveal reveal-delay-1">
+      <div class="skill-name">AI Marketing (ChatGPT, Claude, Gemini)</div>
+      <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="88"></div></div>
+      <div class="skill-pct">88%</div>
+    </div>
+    <div class="skill-card reveal reveal-delay-2">
+      <div class="skill-name">Campaign Analysis & Reporting</div>
+      <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="82"></div></div>
+      <div class="skill-pct">82%</div>
+    </div>
   </div>
-
   <div class="tools-row reveal" style="margin-top: 40px;">
     <span class="tool-chip">Facebook Pixel</span>
     <span class="tool-chip">Canva</span>
@@ -759,18 +674,6 @@
               <div class="kpi-num">1</div>
               <div class="kpi-label">Confirmed Booking</div>
             </div>
-            <div class="kpi-card">
-              <div class="kpi-num">3.8%</div>
-              <div class="kpi-label">CTR</div>
-            </div>
-            <div class="kpi-card">
-              <div class="kpi-num">22K</div>
-              <div class="kpi-label">Reach</div>
-            </div>
-            <div class="kpi-card">
-              <div class="kpi-num">45K</div>
-              <div class="kpi-label">Impressions</div>
-            </div>
           </div>
         </div>
       </div>
@@ -823,10 +726,6 @@
               <div class="kpi-num">3x</div>
               <div class="kpi-label">Better than Portals</div>
             </div>
-            <div class="kpi-card">
-              <div class="kpi-num">10%</div>
-              <div class="kpi-label">Lead → Visit Rate</div>
-            </div>
           </div>
         </div>
       </div>
@@ -841,7 +740,7 @@
       <div class="case-header">
         <div>
           <div class="case-client">Star Developer</div>
-          <div class="case-budget">4 Site Visits on a ₹5,000 Budget · Real Estate</div>
+          <div class="case-budget">Budget: ₹5,000 · Real Estate</div>
         </div>
         <span class="case-badge">Urgency Play</span>
       </div>
@@ -1018,9 +917,9 @@
       <div class="testi-stars">★★★★★</div>
       <div class="testi-quote">"Aditya completely changed how we think about Meta ads. We went from spending money on random leads to actually getting people who showed up to our site. The quality improvement was night and day."</div>
       <div class="testi-author">
-        <div class="testi-avatar" style="background:linear-gradient(135deg,#FF5C28,#FF8C5A);">TI</div>
+        <div class="testi-avatar">TI</div>
         <div>
-          <div class="testi-name">Director, Tejas Infra Tech <span style="color:var(--green);font-size:0.75rem;">✓ Verified Client</span></div>
+          <div class="testi-name">Director, Tejas Infra Tech</div>
           <div class="testi-role">Real Estate · Nagpur</div>
         </div>
       </div>
@@ -1029,9 +928,9 @@
       <div class="testi-stars">★★★★★</div>
       <div class="testi-quote">"We were tired of shared leads from property portals where 10 other agents would call the same person. Aditya's approach gave us exclusive leads and the segment targeting was really smart."</div>
       <div class="testi-author">
-        <div class="testi-avatar" style="background:linear-gradient(135deg,#3B82F6,#7C3AED);">SM</div>
+        <div class="testi-avatar">SM</div>
         <div>
-          <div class="testi-name">MD, Shree Mangalmurti Buildcon <span style="color:var(--green);font-size:0.75rem;">✓ Verified Client</span></div>
+          <div class="testi-name">MD, Shree Mangalmurti Buildcon</div>
           <div class="testi-role">Real Estate · Maharashtra</div>
         </div>
       </div>
@@ -1040,9 +939,9 @@
       <div class="testi-stars">★★★★★</div>
       <div class="testi-quote">"On just ₹5,000 budget, he drove 4 actual site visits. That's exactly what we needed — not form submissions, but real people walking through our project. Very impressed with the approach."</div>
       <div class="testi-author">
-        <div class="testi-avatar" style="background:linear-gradient(135deg,#10B981,#059669);">SD</div>
+        <div class="testi-avatar">SD</div>
         <div>
-          <div class="testi-name">Owner, Star Developer <span style="color:var(--green);font-size:0.75rem;">✓ Verified Client</span></div>
+          <div class="testi-name">Owner, Star Developer</div>
           <div class="testi-role">Real Estate · Maharashtra</div>
         </div>
       </div>
@@ -1129,11 +1028,9 @@
   function animateCounter(el) {
     const target = parseInt(el.dataset.target);
     const suffix = el.dataset.suffix || '';
-    const duration = 1800;
-    const start = Math.floor(target * 0.4);
-    const range = target - start;
-    const step = range / (duration / 16);
-    let current = start;
+    const duration = 2000;
+    const step = target / (duration / 16);
+    let current = 0;
     const timer = setInterval(() => {
       current += step;
       if (current >= target) {
@@ -1142,6 +1039,14 @@
       }
       el.textContent = Math.floor(current) + suffix;
     }, 16);
+  }
+
+  // SKILL BAR ANIMATION
+  function animateSkillBars() {
+    document.querySelectorAll('.skill-bar-fill').forEach(bar => {
+      const w = bar.dataset.width;
+      bar.style.width = w + '%';
+    });
   }
 
   // SCROLL REVEAL + COUNTER TRIGGER
@@ -1167,6 +1072,15 @@
     });
   }, { threshold: 0.5 });
   if (statsEl) counterObs.observe(statsEl);
+
+  // Skill bar trigger
+  const skillsSection = document.querySelector('.skills-section');
+  const skillObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { animateSkillBars(); skillObs.unobserve(entry.target); }
+    });
+  }, { threshold: 0.2 });
+  if (skillsSection) skillObs.observe(skillsSection);
 
   // Active nav on scroll
   const sections = document.querySelectorAll('section[id]');
